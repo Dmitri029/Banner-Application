@@ -1,0 +1,15 @@
+{
+  "name": "Banner-Application",
+  "version": "1.0.0",
+  "description": "",
+  "private": true,
+  "scripts": {
+    "start": "webpack serve"
+  },
+  "license": "MIT",
+  "devDependencies": {
+    "webpack": "^5.7.0",
+    "webpack-cli": "^4.2.0",
+    "webpack-dev-server": "^3.11.0"
+  }
+}

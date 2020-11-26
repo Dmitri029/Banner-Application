@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>Banner-Application</title>
+    <style>
+        a {
+            text-decoration: none;
+        }
+
+        html {
+            box-sizing: border-box;
+        }
+
+        *,
+        *::before,
+        *::after {
+            box-sizing: inherit;
+        }
+
+        img {
+            max-width: 100%;
+            height: auto;
+        }
+
+        body {
+            min-width: 320px;
+            margin: 0;
+            font-family: 'Open Sans', sans-serif;
+            font-weight: normal;
+            font-size: 16px;
+            background-color: #fbfbfb;
+        }
+
+        .page-title {
+            margin-top: 30px;
+            text-align: center;
+            font-size: 26px;
+        }
+
+        .banner-application {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-wrap: wrap;
+            padding-top: 70px;
+            padding-bottom: 100px;
+        }
+
+        .banner-preview__wrap {
+            width: 280px;
+            min-height: 420px;
+            padding: 30px;
+            margin: 0 auto;
+            margin-bottom: 10px;
+            border-radius: 10px;
+            background-color: aqua;
+            text-align: center;
+        }
+
+        .banner-preview__example {
+            width: 160px;
+            height: 160px;
+            margin: 0 auto;
+            border: 2px solid #000000;
+        }
+
+        .banner-preview__desk {
+            margin: 0 auto;
+            margin-top: 50px;
+            text-align: center;
+            color: #000000;
+        }
+
+        .banner-preview__text {
+            height: 77px;
+            margin: 0;
+            margin-top: 30px;
+            overflow: hidden;
+            color: #000000;
+        }
+
+        .banner-form {
+            display: flex;
+            flex-direction: column;
+            width: 320px;
+            padding: 20px;
+            border: 2px solid gray;
+            border-radius: 10px;
+        }
+
+        @media (min-width: 610px) {
+            .banner-form {
+                margin-left: 10px;
+            }
+        }
+
+        .banner-export__title {
+            margin: 0;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+<h1 class="page-title">Приложение-редактор для создания баннеров</h1>
+<div class="banner-application">
+    <div class="banner-preview">
+        <a class="banner-preview__link" href="#">
+            <div class="banner-preview__wrap">
+                <div class="banner-preview__example">
+                    <h3 class="banner-preview__desk">Место для иллюстрации</h3>
+                </div>
+                <h3 class="banner-preview__text">Текст не более 3 строк</h3>
+            </div>
+        </a>
+    </div>
+    <div class="banner-form">
+        <label for="image">Загрузить иллюстрацию</label>
+        <input class="banner-form__image form-item" type="file" id="image" name="image" accept="image/png, image/jpeg">
+        <label for="text">Текст баннера</label>
+        <textarea class="banner-form__text form-item" name="text" id="text" placeholder="Введите текст баннера"></textarea>
+        <label for="color-bg">Цвет баннера</label>
+        <input class="banner-form__color form-item" type="color" name="color-bg" id="color-bg" value="#00FFFF">
+        <label for="link">Ссылка баннера</label>
+        <input class="banner-form__link form-item" type="text" name="link" id="link" placeholder="Введите ссылку для баннера">
+        <div class="banner-export">
+            <p class="banner-export__title">Скопировать как:</p>
+            <div class="banner-export__wrap">
+                <button class="banner-export__png" type="button">PNG</button>
+                <button class="banner-export__html" type="button">HTML</button>
+                <button class="banner-export__json" type="button">JSON</button>
+            </div>
+        </div>
+    </div>
+</div>
+<script src="js/dom-to-image.min.js"></script>
+<script src="js/FileSaver.min.js"></script>
+<script src="js/clipboard.min.js"></script>
+<script src="js/form.js"></script>
+<script src="js/export.js"></script>
+</body>
+</html>
